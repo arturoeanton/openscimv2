@@ -14,7 +14,7 @@ public class Search {
     List< String > schemas = Arrays.asList("urn:ietf:params:scim:api:messages:2.0:SearchRequest");
     List < String > attributes = new ArrayList<>();
     List < String > excludedAttributes = new ArrayList<>();
-    String sortBy = "";
+    List < String >  sortBy = new ArrayList<>();
     String sortOrder = "ascending";
     Integer startIndex = 1;
     Integer count = 0 ;

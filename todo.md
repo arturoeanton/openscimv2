@@ -1,9 +1,5 @@
 **TODO**
-
-
-* GET
-    * filter
-    
+ 
 * PATH
     * Add
     * Replace
@@ -11,9 +7,6 @@
     
 * Bulk
     * BulkId
-    
-* POST
-    * Search
 
 * SCHEMA
     * "caseExact": false

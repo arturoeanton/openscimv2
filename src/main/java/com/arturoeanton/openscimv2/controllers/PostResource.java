@@ -5,16 +5,15 @@ import com.arturoeanton.openscimv2.components.MongoRepository;
 import com.arturoeanton.openscimv2.components.Schemas;
 import com.arturoeanton.openscimv2.exceptions.ScimExceptionBase;
 import com.arturoeanton.openscimv2.model.ResponseError;
+import com.arturoeanton.openscimv2.model.Search;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.UUID;
 
@@ -29,6 +28,9 @@ public class PostResource {
 
     @Autowired
     Externalizer externalizer;
+
+    @Autowired
+    GetResource getResource;
 
     ObjectMapper mapper = new ObjectMapper();
 
@@ -49,12 +51,33 @@ public class PostResource {
             return new ResponseEntity(external, HttpStatus.OK);
         } catch (ScimExceptionBase eScim) {
             ResponseError re = new ResponseError(HttpStatus.valueOf(eScim.getCode()), eScim.getMessage());
-            return new ResponseEntity(re, HttpStatus.resolve(eScim.getCode()));
+            return new ResponseEntity<>(re, HttpStatus.resolve(eScim.getCode()));
         } catch (JsonProcessingException e) {
             var eScim = new ScimExceptionBase(e.getMessage(), HttpStatus.BAD_REQUEST.value());
             ResponseError re = new ResponseError(HttpStatus.valueOf(eScim.getCode()), eScim.getMessage());
-            return new ResponseEntity(re, HttpStatus.resolve(eScim.getCode()));
+            return new ResponseEntity<>(re, HttpStatus.resolve(eScim.getCode()));
         }
     }
+
+
+    @PostMapping("/v2/{endpointResource}/.search")
+    public ResponseEntity<?> postSearch(@PathVariable String endpointResource, @RequestBody String payload) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            var search = objectMapper.readValue(payload, Search.class);
+            return getResource.getByAll(
+                    endpointResource,
+                    search.getAttributes(), search.getExcludedAttributes(),
+                    search.getSortBy(), search.getSortOrder(),
+                    search.getFilter(),
+                    search.getStartIndex(), search.getCount()
+            );
+        } catch (Exception e) {
+            var eScim = new ScimExceptionBase(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.value());
+            ResponseError re = new ResponseError(HttpStatus.valueOf(eScim.getCode()), eScim.getMessage());
+            return new ResponseEntity<>(re, HttpStatus.resolve(eScim.getCode()));
+        }
+    }
+
 
 }

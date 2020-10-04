@@ -50,12 +50,12 @@ public class GetResource {
     public ResponseEntity<?> getByAll(
             @PathVariable String endpoint,
             @RequestParam(value = "attributes", defaultValue = "", required = false) List<String> attributes,
+            @RequestParam(value = "excludedAttributes", defaultValue = "", required = false) List<String> excludedAttributes,
             @RequestParam(value = "sortBy", defaultValue = "",  required = false ) List<String>  sortBy,
             @RequestParam(value = "sortOrder", defaultValue = "ascending", required = false) String sortOrder,
             @RequestParam(value = "filter", defaultValue = "", required = false ) String filter,
             @RequestParam(value = "startIndex", defaultValue = "1", required = false) Integer startIndex,
-            @RequestParam(value = "count", defaultValue = "0",required = false) Integer count,
-            @RequestParam(value = "excludedAttributes", defaultValue = "", required = false) List<String> excludedAttributes
+            @RequestParam(value = "count", defaultValue = "0",required = false) Integer count
     ) {
         try {
             var schema = schemas.endpointToSchema.get("/" + endpoint);
