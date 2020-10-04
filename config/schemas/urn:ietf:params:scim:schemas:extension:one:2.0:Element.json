@@ -98,7 +98,7 @@
       "type": "integer",
       "multiValued": true,
       "description": "Numeric or alphanumeric identifier assigned to a person, typically based on order of hire or association with an organization.",
-      "required": false,
+      "required": true,
       "caseExact": false,
       "mutability": "readWrite",
       "returned": "default",

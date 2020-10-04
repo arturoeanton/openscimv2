@@ -224,6 +224,12 @@ public class Schemas {
                 if (map.get(a.getName()) == null) {
                     throw new ScimExceptionBase(String.format("%s -> %s is required", path, a.getName()), 400);
                 }
+                if (a.isMultiValued()){
+                    var collection = ((Collection)map.get(a.getName()));
+                    if (collection.size() == 0){
+                        throw new ScimExceptionBase(String.format("%s -> %s is required (this collection should have one element)", path, a.getName()), 400);
+                    }
+                }
             }
         }
     }
