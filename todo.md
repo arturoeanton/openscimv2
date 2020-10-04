@@ -1,6 +1,6 @@
 **TODO**
  
-* PATH
+* PATCH
     * Add
     * Replace
     * Delete
