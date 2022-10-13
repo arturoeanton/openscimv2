@@ -1,0 +1,150 @@
+<!-- src/main/resources/templates/index.html -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Hopbox Identity Management</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" href="/cropped-test_logo_2-32x32.png" sizes="32x32" />
+    <link rel="icon" href="/cropped-test_logo_2-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/cropped-test_logo_2-180x180.png" />
+    <link href="/main.css" rel="stylesheet">
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+    <script src="/app.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+    <a class="navbar-brand">
+        <img class="logo" src="/logo_hopbox.png" data-no-retina="" alt="Hopbox"><br/>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggle-label">Menu</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users">Users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/machines">Machines</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div id="main-content" class="container-md p-5 my-5" style="text-align: left;">
+    <h2>Machines  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >+</button></h2>
+    <div class="table-responsive mt-2">
+        <table class="table table-striped table-sm">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="machine:${response}">
+                <td th:text="${machine.id}"></td>
+                <td th:text="${machine.MachineType}"></td>
+                <td th:text="${machine.displayName}"></td>
+                <td>
+                    <a th:href="@{/machines/{id}(id=${machine.id})}"
+                       class="btn btn-secondary">Delete</a>
+                    <button class="btn btn-primary" th:onclick="editMachine([[${machine}]])">Edit</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- New Machine Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Machine</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form id="form_machine" >
+                    <div class="row mt-1">
+                        <div class="col-12">
+                            <input type="text" id="type" class="form-control"
+                                   placeholder="type">
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-12">
+                            <input type="text" id="name" class="form-control"
+                                   placeholder="name">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="saveMachine" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Machine Modal -->
+<div class="modal fade" id="editMachineModal" tabindex="-1" aria-labelledby="MachineModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editMachineModalLabel">Edit  Machine</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form id="form_edit_machine" >
+                    <div class="row mt-1">
+                        <div class="col-12">
+                            <input type="hidden" id="id" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-12">
+                            <input type="text" id="type_e" class="form-control"
+                                   placeholder="type">
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-12">
+                            <input type="text" id="name_e" class="form-control"
+                                   placeholder="name">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="editMachine" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+
+

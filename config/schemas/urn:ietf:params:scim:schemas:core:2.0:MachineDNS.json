@@ -1,0 +1,88 @@
+{
+  "id" : "urn:ietf:params:scim:schemas:core:2.0:MachineDNS",
+  "name" : "MachineDNS",
+  "description" : "MachineDNS",
+  "attributes" : [
+    {
+      "name" : "displayName",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "A human-readable name for the MachineDNS. REQUIRED.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "multiValued": false,
+      "description": "ID for the Machine.",
+      "required": false,
+      "caseExact": false,
+      "mutability": "readOnly",
+      "returned": "default",
+      "uniqueness": "none"
+    },
+    {
+      "name" : "MachineType",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "A human-readable name for the MachineType. REQUIRED.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "DNS",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "MachineDNS",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "Services",
+      "type" : "complex",
+      "multiValued" : false,
+      "description" : "MachineDNS",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "LinuxMachine",
+      "type" : "complex",
+      "multiValued" : false,
+      "description" : "LinuxMachineExtension",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "WindowsMachine",
+      "type" : "complex",
+      "multiValued" : false,
+      "description" : "WindowsMachineExtension",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    }
+  ],
+  "meta" : {
+    "resourceType" : "Schema",
+    "location" : "/v2/Schemas/urn:ietf:params:scim:schemas:core:2.0:MachineDNS"
+  }
+}

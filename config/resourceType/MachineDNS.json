@@ -1,0 +1,14 @@
+{
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
+  "id": "MachineDNS",
+  "name": "MachineDNS",
+  "endpoint": "/MachineDNSs",
+  "description": "MachineDNS",
+  "schema": "urn:ietf:params:scim:schemas:core:2.0:MachineDNS",
+  "schemaExtensions": [
+  ],
+  "meta": {
+    "location": "/v2/ResourceTypes/MachineDNS",
+    "resourceType": "ResourceType"
+  }
+}

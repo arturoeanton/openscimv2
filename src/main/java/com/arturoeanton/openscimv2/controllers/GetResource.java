@@ -7,6 +7,7 @@ import com.arturoeanton.openscimv2.exceptions.ScimExceptionBase;
 import com.arturoeanton.openscimv2.model.ResponseError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import lombok.extern.java.Log;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +29,8 @@ public class GetResource {
     Externalizer externalizer;
 
     //  ObjectMapper mapper = new ObjectMapper();
+
+
 
     @GetMapping("/v2/{endpoint}/{id}")
     public ResponseEntity<?> getById(

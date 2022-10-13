@@ -1,0 +1,88 @@
+{
+  "id" : "urn:ietf:params:scim:schemas:core:2.0:Passwd",
+  "name" : "Passwd",
+  "description" : "Passwd",
+  "attributes" : [
+    {
+      "name" : "PwName",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "A human-readable name for the Passwd. REQUIRED.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "PwPasswd",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "PwPasswd",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "PwUID",
+      "type" : "integer",
+      "multiValued" : false,
+      "description" : "PwUID.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "PwGid",
+      "type" : "integer",
+      "multiValued" : false,
+      "description" : "PwGid.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "PwGecos",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "PwGecos",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "PwDir",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "PwDir",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "PwShell",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "PwShell",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    }
+  ],
+  "meta" : {
+    "resourceType" : "Schema",
+    "location" : "/v2/Schemas/urn:ietf:params:scim:schemas:core:2.0:Passwd"
+  }
+}

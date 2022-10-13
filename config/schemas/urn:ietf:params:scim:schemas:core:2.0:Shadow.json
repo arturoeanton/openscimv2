@@ -1,0 +1,110 @@
+{
+  "id" : "urn:ietf:params:scim:schemas:core:2.0:Shadow",
+  "name" : "Shadow",
+  "description" : "Shadow",
+  "attributes" : [
+    {
+      "name" : "SpNamp",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "A human-readable name for the SpNamp. REQUIRED.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "SpPwdp",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "A human-readable name for the SpPwdp.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "SpLstchg",
+      "type" : "integer",
+      "multiValued" : false,
+      "description" : "A human-readable name for the SpPwd.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "SpPwdp",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "A human-readable name for the SpPwdp.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "SpPwdp",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "A human-readable name for the SpPwdp.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "SpPwdp",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "A human-readable name for the SpPwdp.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "SpPwdp",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "A human-readable name for the SpPwdp.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "SpPwdp",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "A human-readable name for the SpPwdp.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    },
+    {
+      "name" : "SpPwdp",
+      "type" : "string",
+      "multiValued" : false,
+      "description" : "A human-readable name for the SpPwdp.",
+      "required" : false,
+      "caseExact" : false,
+      "mutability" : "readWrite",
+      "returned" : "default",
+      "uniqueness" : "none"
+    }
+  ],
+  "meta" : {
+    "resourceType" : "Schema",
+    "location" : "/v2/Schemas/urn:ietf:params:scim:schemas:core:2.0:Shadow"
+  }
+}

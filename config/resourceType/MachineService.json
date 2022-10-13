@@ -1,0 +1,14 @@
+{
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
+  "id": "MachineService",
+  "name": "MachineService",
+  "endpoint": "/MachineServices",
+  "description": "MachineService",
+  "schema": "urn:ietf:params:scim:schemas:core:2.0:MachineService",
+  "schemaExtensions": [
+  ],
+  "meta": {
+    "location": "/v2/ResourceTypes/MachineService",
+    "resourceType": "ResourceType"
+  }
+}

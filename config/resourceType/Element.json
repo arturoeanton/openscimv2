@@ -12,7 +12,7 @@
     }
   ],
   "meta": {
-    "location": "/v2/ResourceTypes/User",
+    "location": "/v2/ResourceTypes/Element",
     "resourceType": "ResourceType"
   }
 }

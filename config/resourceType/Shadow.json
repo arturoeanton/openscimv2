@@ -1,0 +1,14 @@
+{
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
+  "id": "Shadow",
+  "name": "Shadow",
+  "endpoint": "/Shadows",
+  "description": "Shadow",
+  "schema": "urn:ietf:params:scim:schemas:core:2.0:Shadow",
+  "schemaExtensions": [
+  ],
+  "meta": {
+    "location": "/v2/ResourceTypes/Shadow",
+    "resourceType": "ResourceType"
+  }
+}

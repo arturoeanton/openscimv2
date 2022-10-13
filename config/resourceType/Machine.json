@@ -1,0 +1,14 @@
+{
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
+  "id": "Machine",
+  "name": "Machine",
+  "endpoint": "/Machines",
+  "description": "Machine",
+  "schema": "urn:ietf:params:scim:schemas:core:2.0:Machine",
+  "schemaExtensions": [
+  ],
+  "meta": {
+    "location": "/v2/ResourceTypes/Machine",
+    "resourceType": "ResourceType"
+  }
+}

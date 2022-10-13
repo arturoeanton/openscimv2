@@ -1,0 +1,14 @@
+{
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
+  "id": "Passwd",
+  "name": "Passwd",
+  "endpoint": "/Passwds",
+  "description": "Passwd",
+  "schema": "urn:ietf:params:scim:schemas:core:2.0:Passwd",
+  "schemaExtensions": [
+  ],
+  "meta": {
+    "location": "/v2/ResourceTypes/Passwd",
+    "resourceType": "ResourceType"
+  }
+}
